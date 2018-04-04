@@ -31,3 +31,5 @@ When to use what?
   - TF tensor format - (samples, rows, cols, **channels**)
   - Theano tensor format - (samples, **channels**, rows, cols)
   - To avoid ambiguity, while programming in Keras, we explicitly set the image dimension ordering to either 'tf' or 'th'
+  
+* Keras provide ability to **freeze** layers i.e we will not update the weights of the layer. This is useful when we are fine tuning a model. This is acheived by passing *trainable=False" parameter.
