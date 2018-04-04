@@ -25,3 +25,9 @@ When to use what?
   - Dynamic data structures inside network. Can define, change, execute nodes as you go.
   - In RNNs - input sequence length has to stay constant for static graphs. For instance, for a sentiment analysis model of English sentences
   we have to fix the sentence length to some maximum value and pad smaller sequences with zeros.
+
+## Programming Details
+* Both TF and Theano expects a 4-D tensor as input. There are some differences:
+  - TF tensor format - (samples, rows, cols, **channels**)
+  - Theano tensor format - (samples, **channels**, rows, cols)
+  - To avoid ambiguity, while programming in Keras, we explicitly set the image dimension ordering to either 'tf' or 'th'
