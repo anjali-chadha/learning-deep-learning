@@ -1,3 +1,48 @@
+## Foundations of CNN (Week 1)
+
+### Computer Vision
+* Neural Style Transfer
+* Let's say input image size 1000 by 1000 by 3, larger image size
+* First input layer - 3 million size
+* Hidden layer first - let's say has 1000 units.
+* W[1] dimensions will be 1000 * 3 million
+* Matrix will have 3 billion paramters 
+* Very Very large
+* Difficult to get enough data to prevent a neural network from overfitting.
+
+### Edge Detection
+* 
+* Find vertical edges in image - Vertical detector
+* Filter or kernel - say of size 3 by 3
+* Convolving input image with the vertical filter
+* Perform element wise product and addition and create new matrix --> Image
+* 6 by 6 convolve with 3 by 3 filter gives 4 by 4 image
+* Gives vertical image detector
+* Programming Details
+ - Python: conv-forward
+ - tensorflow- tf.nn.conv2d
+ - keras - Conv2D
+* How vertical image detection working?
+* Given image - transitions from white to black - has strong vertical edge down in the middle 
+of image 
+* Vertical edge is a 3 by 3 region since we are using a 3 by 3 filter where there are bright 
+pixels on the left, do not care what's in the middle and dark pixels on the right.
+
+### More Edge Detection
+* Positive and Negative Edges
+* Light to dark vs dark to light edge transitions
+* We also hae horizontal edge detection filter
+* Other possible best set of numbers which we can use as filters
+* Sobel filter - 1, 2, 1, 0, 0, 0, -1, -2, -1
+* Advantange of Sobel - puts little bit more weight to the central row, the central pixel
+which makes it more robust.
+* Scharr filter - 3, 10, 3, 0, 0, 0, -3, -10, -3
+* With the rise of deep leanring, **learn the nine parameters in the 3 by 3 filter to 
+get a good edge detector**.
+* Other than the vertical and horizontal edges, it can learn to detect edges that are at 45 degrees or 700
+degrees or whatever orientation it chooses.
+* **Convolution** operation  allows back prop to learn whatever 3 by 3 filter it wants and then to apply it throughout 
+the entrie image
 
 ========================================================================
 ## Detection Algorithms (Week 3)
