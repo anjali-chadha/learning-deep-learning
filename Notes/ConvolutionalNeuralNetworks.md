@@ -44,6 +44,104 @@ degrees or whatever orientation it chooses.
 * **Convolution** operation  allows back prop to learn whatever 3 by 3 filter it wants and then to apply it throughout 
 the entrie image
 
+### Padding
+* 6 by 6 image convolved with 3 by 3 filter gives 4 by 4 image
+* Why 4 by 4 image? Because the number of possible solutions with the 3 by 3 filter, there are only 
+43 by 4 possible solutions.
+* Image - n by n
+* Filter - f by f
+* Output - Image convolved with Filter
+* Output dimensions - (n-f+1) * (n-f+1)
+* What's the downside here?
+ - Everytime we apply convolutional operator, image shrinks. So, we can do that a few times befre the images starts getting really small.
+ - Pixels at the corner or the edge are used in only one of the outputs. However, pixels in the middle
+ - Hence, we are throwing away lot of information near the edge of the image.
+* If 100 layer deep network, and image starts shrinking at every layer, we will get very small image in the output.
+* Solution to both problems - Pad the image.
+* Say, one pixel border added around the edges.
+* Original image - 6 by 6 converted into 8 by 8
+* When padded image convolved with 3 by 3 filter-> Output image size 6 by 6. 
+* Now we are preserving the original input size.
+* P - padding amount
+* Output - (n+2p-f+1) by (n+2p-f+1)
+* **How much to pad?** Two common choices-
+ - Valid convolutions - no padding
+ - Same convolutions - Pad so that output size is the same as the input size
+ - (n+2p-f+1) = n. Solving this equation
+ - p = (f-1)/2
+ - This implies, when f is odd, we can choose padding such that output size is same as input size
+* f is usually odd.
+* when we have odd dimension filter i.e f is odd, then it has a central position. Nice to have that in computer vision
+ 
+### Strided Convolutions
+* Image - N by N
+* Convolved with filter F by F
+* Padding P and Stride S
+* Output image - (N+2P-F)/S + 1
+* What if this fraction is not an integer? - Take the floor of the number.
+
+### Convolutions over Volume
+* Convoultions over an RGB image - 3 channels
+* Now convolving with a 3d filter- 3 by 3 by 3
+* Input image - 6 by 6 by 6 (height, width, channels)
+* Number of channels in input and filter should be same
+* Output - 4 by 4
+* Visualize filter as a cube and do convolve operation.
+* Want to detect vertical edges in the red channel - put vertical filter only in the red channel.
+Rest all zero
+* Multiple filters at the same time.
+* Want to detect horizontal, vertical, at an angle edge detector.
+* Convolve the image with these separate filters
+* Output will be stack of images obtained from these filters.
+* Output Size - 4 by 4 by 2 where 2 represents the number of filters we use.
+* Number of channels also called depth of an image.
+
+### One Layer of CNN
+* Mutiple filters will give multiple output images
+* Add bias to these output images and add non linearity as well
+* Convolution is a linear operation.
+* Z = Wa + b
+* **Number of paramters in one layer** - If you have 10 filters that are 3 by 3 by 3 in one layer of a network
+How many paramters do we have? (27+1)= 28 * 10 = 280 parameters.
+* No matter how huge the input image is, the number of paraemeters will still remain fixed.
+* We can use multiple filters to detect features, vertical edges, horizontal edges.
+* This property of CNN makes it less prone to overfitting.
+
+### Pooling
+* Pooling layers used to reduce the size of the representation, to speed the computation, to make some of the fatures
+more robust.
+* Max Pooling
+* INput image - 4 by 4. Break into 2 by 2 regions. Output - 2 by 2 - contains the max of these numbers.
+* Filter size = 2, Stride = 2 (hyper parameters)
+* No parameters for the gradient descent to learn
+* Average Pooling
+* Intuition behind pooling
+
+### CNN example
+* General convention - number of layers in the NN respresents the layers having parameters to learn
+i.e not including the pooling layers.
+* As we go deeper into the network, height and width will decrease and the number of channels will increase.
+* Conv layers followed by a pooling layer, one or more conv layers followed by a pooling layer followed by few fully connceted
+layers in the end and then in the end softmax.
+* Activation size tends to go down gradually as you go deeper in to the network.
+
+### Why convolutions
+* Two main advantages - 
+ - Parameter sharing
+ - Sparsity of connections
+* Parameter sharing is motivated by observation that feature detector such as vertical edge detector
+that's useful in one part of the image is probably useful in another part of the image.
+* In other words, same vertical edge filter, can  be applied on multiple positions of the image.
+* True for low level features like edges.
+* In this way, same parameters for edge detection are shared throughout the image
+* **Sparsity** - In each layer, each output value depends only on small number of inputs.
+* Other pixels don't affect the output at all.
+* NN good at capturing translation invariance. Cat shifted a couple of pixels to the right
+
+
+========================================================================
+
+
 ========================================================================
 ## Detection Algorithms (Week 3)
 ### Object Detection
