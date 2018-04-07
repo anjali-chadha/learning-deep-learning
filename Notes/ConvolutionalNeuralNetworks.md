@@ -11,7 +11,7 @@
 * Difficult to get enough data to prevent a neural network from overfitting.
 
 ### Edge Detection
-* 
+
 * Find vertical edges in image - Vertical detector
 * Filter or kernel - say of size 3 by 3
 * Convolving input image with the vertical filter
@@ -19,9 +19,9 @@
 * 6 by 6 convolve with 3 by 3 filter gives 4 by 4 image
 * Gives vertical image detector
 * Programming Details
- - Python: conv-forward
- - tensorflow- tf.nn.conv2d
- - keras - Conv2D
+ * Python: conv-forward
+ * tensorflow- tf.nn.conv2d
+ * keras - Conv2D
 * How vertical image detection working?
 * Given image - transitions from white to black - has strong vertical edge down in the middle 
 of image 
@@ -53,9 +53,9 @@ the entrie image
 * Output - Image convolved with Filter
 * Output dimensions - (n-f+1) * (n-f+1)
 * What's the downside here?
- - Everytime we apply convolutional operator, image shrinks. So, we can do that a few times befre the images starts getting really small.
- - Pixels at the corner or the edge are used in only one of the outputs. However, pixels in the middle
- - Hence, we are throwing away lot of information near the edge of the image.
+ * Everytime we apply convolutional operator, image shrinks. So, we can do that a few times befre the images starts getting really small.
+ * Pixels at the corner or the edge are used in only one of the outputs. However, pixels in the middle
+ * Hence, we are throwing away lot of information near the edge of the image.
 * If 100 layer deep network, and image starts shrinking at every layer, we will get very small image in the output.
 * Solution to both problems - Pad the image.
 * Say, one pixel border added around the edges.
@@ -65,11 +65,11 @@ the entrie image
 * P - padding amount
 * Output - (n+2p-f+1) by (n+2p-f+1)
 * **How much to pad?** Two common choices-
- - Valid convolutions - no padding
- - Same convolutions - Pad so that output size is the same as the input size
- - (n+2p-f+1) = n. Solving this equation
- - p = (f-1)/2
- - This implies, when f is odd, we can choose padding such that output size is same as input size
+ * Valid convolutions - no padding
+ * Same convolutions - Pad so that output size is the same as the input size
+ * (n+2p-f+1) = n. Solving this equation
+ * p = (f-1)/2
+ * This implies, when f is odd, we can choose padding such that output size is same as input size
 * f is usually odd.
 * when we have odd dimension filter i.e f is odd, then it has a central position. Nice to have that in computer vision
  
@@ -127,8 +127,8 @@ layers in the end and then in the end softmax.
 
 ### Why convolutions
 * Two main advantages - 
- - Parameter sharing
- - Sparsity of connections
+ * Parameter sharing
+ * Sparsity of connections
 * Parameter sharing is motivated by observation that feature detector such as vertical edge detector
 that's useful in one part of the image is probably useful in another part of the image.
 * In other words, same vertical edge filter, can  be applied on multiple positions of the image.
