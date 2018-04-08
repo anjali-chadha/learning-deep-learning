@@ -140,8 +140,43 @@ that's useful in one part of the image is probably useful in another part of the
 
 
 ========================================================================
+## Case Studies
+
+### Outline
+* Classical Networks
+  * LeNet5
+  * AlexNet
+  * VGGNet 16
+* ResNet
+* InceptionNet
 
 
+## LeNet
+* **LeNet 5**
+  * For handwrittten image recognition orignally written
+  * Trained for grayscale images
+  * Small NN - 60k parameters
+  * Height width shrinking in the network
+  * Channels increasing as the depth of the network increasing
+  * Back then, people used signmoid and tanh non linear functions
+  
+* **AlexNet**
+  * Input image - 227 by 227 by 3
+  * for RGB images
+  * Trained on ImageNet dataset
+  * Lots of similarities with leNet but much bigger
+  * Millions of parameters
+  * Using ReLu activation functions
+  * Local Response Normalisation - not used anymore
+  * Complicate architecture - many hyperparameters
+  
+* **VGGNet - 16**
+  * Very simple network
+  * Using same stride and filter size all over the network
+  * Deep network
+  * 16 layers with parameters
+  
+## ResNet  
 ========================================================================
 ## Detection Algorithms (Week 3)
 ### Object Detection
