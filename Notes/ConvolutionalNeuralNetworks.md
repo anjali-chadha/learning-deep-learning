@@ -1,4 +1,9 @@
-## Foundations of CNN (Week 1)
+# Contents
+1. [Week 1 - Foundations of CNN](#foundations-of-cnn)
+2. [Week 2 - Case Studies](#case-studies)
+3. [Week 3 - Detection Algorithms](#detection-algorithms)
+
+## Foundations of CNN
 
 ### Computer Vision
 * Neural Style Transfer
@@ -224,7 +229,7 @@ training error starts increasing for deep networks
 
 
 ========================================================================
-## Detection Algorithms (Week 3)
+## Detection Algorithms
 ### Object Detection
 * Classification with Localisation (Bounding Box) - generally one object
 * Detection - Yolo does this - can have more objects in single image
