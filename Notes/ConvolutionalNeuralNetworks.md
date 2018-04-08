@@ -151,7 +151,7 @@ that's useful in one part of the image is probably useful in another part of the
 * InceptionNet
 
 
-## LeNet
+### LeNet
 * **LeNet 5**
   * For handwrittten image recognition orignally written
   * Trained for grayscale images
@@ -176,7 +176,53 @@ that's useful in one part of the image is probably useful in another part of the
   * Deep network
   * 16 layers with parameters
   
-## ResNet  
+### ResNet  
+* Skip Connections
+* Residual Block - a[l] will be fast forwarded/shortcut to the a[l+2] 
+* a[l+2] = g( z[l+2] + a[l])
+* Allows to train deeper networks
+* Taking many residual blcoks and stacking them
+* Plain network - normal NN
+* Skip connections in plain network to make residual network
+* For Plain network, practically, as you increase the number of layers after a certain time,
+training error starts increasing for deep networks
+* In Residual Network, training error keeps decreasing with the increase in number of layers.
+
+### Why ResNets work?
+* x --> Big NN --> a[l]
+* ResNet can easily learn Identity function. Hence, won't hurt the ability the NN even if two layers are added.
+* Same convolutions often used. As we do skip connections. Size same required
+
+### One by One convolution
+
+
+### Transfer Learning
+* Instead of training from scratch
+* Use others pre trained weights and use them as initialisation
+* Image Net dataset
+* Get rid of the softmax layer and put your own softmax unit outputting the requiired labels
+* Freeze all the earlier layers.
+* *trainableParameter
+
+### Data Augmentation
+* Standard Techniques -
+  * Mirroring on vertical axis 
+  * Random Cropping - Four corners cropping. 
+  * Rotation
+  * Shearing
+  * Local wrapping
+* Color Shifting - Adding and subtracting in the RGB colors
+  * Sunlight was yellower, indorr lightenning.
+  * Makes algorithm more robust to color distortion
+  * Can used PCA color augmentation
+  
+* This process also has hyper parameters
+
+### Tips for doign well on benchmarks/winning competitions
+* Ensembling - Not for productions
+* Multi crop - Data augmentation
+
+
 ========================================================================
 ## Detection Algorithms (Week 3)
 ### Object Detection
