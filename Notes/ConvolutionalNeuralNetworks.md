@@ -6,8 +6,8 @@
 ## Foundations of CNN
 
 ### Computer Vision
-* Neural Style Transfer
-* Let's say input image size 1000 by 1000 by 3, larger image size
+* Applications - Neural Style Transfer
+* Let's say input image size is 1000 by 1000 by 3 (large image size)
 * First input layer - 3 million size
 * Hidden layer first - let's say has 1000 units.
 * W[1] dimensions will be 1000 * 3 million
