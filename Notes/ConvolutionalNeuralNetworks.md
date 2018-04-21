@@ -7,11 +7,12 @@
 
 ### Computer Vision
 * Applications - Neural Style Transfer
-* Let's say input image size is 1000 by 1000 by 3 (large image size)
-* First input layer - 3 million size
-* Hidden layer first - let's say has 1000 units.
-* W[1] dimensions will be 1000 * 3 million
-* Matrix will have 3 billion paramters 
+* Normal Neural Network for large images
+  * Let's say input image size is 1000 by 1000 by 3 
+  * First input layer - 3 million size
+  * Hidden layer first - let's say has 1000 units.
+  * W[1] dimensions will be 1000 * 3 million
+  * Matrix will have 3 billion paramters 
 * Very Very large
 * Difficult to get enough data to prevent a neural network from overfitting.
 
