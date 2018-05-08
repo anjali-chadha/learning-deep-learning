@@ -19,7 +19,7 @@
 ### Edge Detection
 
 * Find vertical edges in image - Vertical detector
-* Filter or kernel - say of size 3 by 3
+* Use a filter or kernel - say of size 3 by 3
 * Convolving input image with the vertical filter
 * Perform element wise product and addition and create new matrix --> Image
 * 6 by 6 convolve with 3 by 3 filter gives 4 by 4 image
