@@ -21,9 +21,9 @@
 * Find vertical edges in image - Vertical detector
 * Use a filter or kernel - say of size 3 by 3
 * Convolving input image with the vertical filter
-* Perform element wise product and addition and create new matrix --> Image
+* Perform element wise product and addition and create new matrix --> Output will be an image
 * 6 by 6 convolve with 3 by 3 filter gives 4 by 4 image
-* Gives vertical image detector
+* This whole setup gives us a **vertical image detector**.
 * Programming Details
   * Python: conv-forward
   * tensorflow- tf.nn.conv2d
