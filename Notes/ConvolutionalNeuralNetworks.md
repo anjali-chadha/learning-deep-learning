@@ -35,7 +35,9 @@ of image
 pixels on the left, do not care what's in the middle and dark pixels on the right.
 
 ### More Edge Detection
-* Positive and Negative Edges
+* Types of Edges:
+	* Positive Edges
+	* Negative Edges
 * Light to dark vs dark to light edge transitions
 * We also hae horizontal edge detection filter
 * Other possible best set of numbers which we can use as filters
