@@ -54,10 +54,11 @@ the entrie image
 
 ### Padding
 * 6 by 6 image convolved with 3 by 3 filter gives 4 by 4 image
-* Why 4 by 4 image? Because the number of possible solutions with the 3 by 3 filter, there are only 
+* Why 4 by 4 image? 
+	* Because the number of possible solutions with the 3 by 3 filter, there are only 
 43 by 4 possible solutions.
-* Image - n by n
-* Filter - f by f
+* Image size - n by n
+* Filter size - f by f
 * Output - Image convolved with Filter
 * Output dimensions - (n-f+1) * (n-f+1)
 * What's the downside here?
