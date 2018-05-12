@@ -36,6 +36,7 @@ Keras, Tensorflow, Caffe, PyTorch, Theano.... (Too many options!!?)
 When to use what?
 
 ## Frameworks
+Other Deep Learning frameworks:
 * Microsoft CNTK
 * Google TF
 * Google Keras
