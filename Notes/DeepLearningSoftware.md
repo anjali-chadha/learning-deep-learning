@@ -75,7 +75,7 @@ Other Deep Learning frameworks:
 ## Discussion
 * Keras is high-level API built on Tensorflow (and can be used on top of Theano too).
 * More user-friendly as compared to TF.
-* Hmm.. then why will I ever use Tensorflow?
+* Hmmm.. then why will I ever use Tensorflow?
 * Keras useful for rapid prototyping. Using keras, can build very simple or very complex nerual networks within a few minutes.
 * Keras - pythonic, modularity
 * Keras code is portable - can implement nerual network in Keras using Theano as a backend and then specidy the backend to run o TF, with no changes to code
